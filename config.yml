@@ -1,0 +1,16 @@
+emix:
+  db:
+    [
+    {
+      name: abc,
+      connect: 'root:password@/db1?charset=utf8&parseTime=True&loc=Local',
+      maxIdleConns: 20,
+      maxOpenConns: 100,
+      connMaxLifetime: 3600,
+    },
+    {
+      name: qwe,
+      connect: 'root:password@/db2?charset=utf8&parseTime=True&loc=Local',
+      #      dialect: mysql
+    }
+    ]
