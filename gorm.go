@@ -167,6 +167,7 @@ func parseYaml(file string) []DbConfig {
 	utils.PanicError(e)
 	yc := RootConfig{}
 	e = yaml.Unmarshal(bytes, &yc)
+	utils.PanicError(e)
 	return yc.Emix.Db
 }
 
