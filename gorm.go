@@ -6,7 +6,7 @@ import (
 	"github.com/jinzhu/gorm"
 	_ "github.com/jinzhu/gorm/dialects/mysql"
 	"gopkg.in/yaml.v3"
-	"io/ioutil"
+	"os"
 	"strconv"
 	"strings"
 	"time"
@@ -163,7 +163,7 @@ func (r *MsqlPager) Scan(slice interface{}) error {
 }
 
 func parseYaml(file string) []DbConfig {
-	bytes, e := ioutil.ReadFile(file)
+	bytes, e := os.ReadFile(file)
 	utils.PanicError(e)
 	yc := RootConfig{}
 	e = yaml.Unmarshal(bytes, &yc)
